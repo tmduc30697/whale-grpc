@@ -1,0 +1,29 @@
+{
+  "name": "whale-grpc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tmduc30697/whale-grpc.git",
+  "author": "Tong Minh Duc <tong.minh.duc@azoom.jp>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx ts-node -r tsconfig-paths/register ./src/main.ts",
+    "proto:generate": "npx grpc_tools_node_protoc --grpc_out=grpc_ts:./generated --plugin=protoc-gen-grpc=./node_modules/protoc-gen-ts/protoc-gen-ts.js ./proto/*.proto",
+    "prisma:migrate": "npx prisma migrate dev"
+  },
+  "devDependencies": {
+    "@types/google-protobuf": "^3.15.12",
+    "@types/node": "^20.14.1",
+    "prisma": "^5.14.0",
+    "protoc-gen-ts": "^0.8.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.10.8",
+    "@grpc/proto-loader": "^0.7.13",
+    "@prisma/client": "5.14.0",
+    "google-protobuf": "^3.21.2",
+    "grpc": "^1.24.11",
+    "tsconfig-paths": "^4.2.0"
+  }
+}
